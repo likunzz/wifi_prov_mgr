@@ -1,0 +1,76 @@
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: E:/fvgbhgfyyuipojio/wifi_prov_mgr/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/admin/.espressif/tools/ninja/1.11.1/ninja.exe cmTC_8d4f4 && ninja: error: unknown target 'cmTC_8d4f4'
+
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: E:/fvgbhgfyyuipojio/wifi_prov_mgr/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/admin/.espressif/tools/ninja/1.11.1/ninja.exe cmTC_d6b36 && ninja: error: loading 'build.ninja': The system cannot find the file specified.
+
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: E:/fvgbhgfyyuipojio/wifi_prov_mgr/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/admin/.espressif/tools/ninja/1.11.1/ninja.exe cmTC_d4d82 && [1/2] Building C object CMakeFiles/cmTC_d4d82.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_d4d82
+FAILED: cmTC_d4d82 
+cmd.exe /C "cd . && C:\Users\admin\.espressif\tools\xtensa-esp-elf\esp-13.2.0_20240530\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_d4d82.dir/CheckFunctionExists.c.obj -o cmTC_d4d82  -lpthreads && cd ."
+C:/Users/admin/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: cannot find -lpthreads: No such file or directory
+C:/Users/admin/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_d4d82.dir/CheckFunctionExists.c.obj:(.literal+0x0): warning: pthread_create is not implemented and will always fail
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: E:/fvgbhgfyyuipojio/wifi_prov_mgr/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/admin/.espressif/tools/ninja/1.11.1/ninja.exe cmTC_1ca19 && [1/2] Building C object CMakeFiles/cmTC_1ca19.dir/CheckFunctionExists.c.obj
+[2/2] Linking C executable cmTC_1ca19
+FAILED: cmTC_1ca19 
+cmd.exe /C "cd . && C:\Users\admin\.espressif\tools\xtensa-esp-elf\esp-13.2.0_20240530\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_1ca19.dir/CheckFunctionExists.c.obj -o cmTC_1ca19  -lpthread && cd ."
+C:/Users/admin/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: cannot find -lpthread: No such file or directory
+C:/Users/admin/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/13.2.0/../../../../xtensa-esp-elf/bin/ld.exe: CMakeFiles/cmTC_1ca19.dir/CheckFunctionExists.c.obj:(.literal+0x0): warning: pthread_create is not implemented and will always fail
+collect2.exe: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if compiler accepts -pthread failed with the following output:
+Change Dir: E:/fvgbhgfyyuipojio/wifi_prov_mgr/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Users/admin/.espressif/tools/ninja/1.11.1/ninja.exe cmTC_434b9 && [1/2] Building C object CMakeFiles/cmTC_434b9.dir/CheckForPthreads.c.obj
+[2/2] Linking C executable cmTC_434b9
+FAILED: cmTC_434b9 
+cmd.exe /C "cd . && C:\Users\admin\.espressif\tools\xtensa-esp-elf\esp-13.2.0_20240530\xtensa-esp-elf\bin\xtensa-esp32-elf-gcc.exe -mlongcalls -Wno-frame-address  -fno-builtin-memcpy -fno-builtin-memset -fno-builtin-bzero -fno-builtin-stpcpy -fno-builtin-strncpy  CMakeFiles/cmTC_434b9.dir/CheckForPthreads.c.obj -o cmTC_434b9  -pthread && cd ."
+xtensa-esp-elf-gcc.exe: error: unrecognized command-line option '-pthread'; did you mean '-fpthread'?
+ninja: build stopped: subcommand failed.
+
+
+
